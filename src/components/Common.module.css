@@ -1,0 +1,26 @@
+.bottom-border {
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .input-select-common {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .box {
+    width: 100%;
+    background-color: #efefef;
+    padding: 20px 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+
+  .write{
+    color: #fcfcfc;
+  }

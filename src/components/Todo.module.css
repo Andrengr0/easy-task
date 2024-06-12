@@ -1,0 +1,35 @@
+.todo{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button{
+    background-color: #333974;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .8;
+    transition: .3;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+.complete{
+    background-color: #1a4b1a;
+}
+
+.remove{
+    background-color: #d9534f;
+}

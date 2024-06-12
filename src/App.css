@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background-color: #f4f4f4;
+  padding: 30px;
+  color: 333;
+  background-image: url('images/bg.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+h1{
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p{
+  margin: 10px 0;
+}
+
+.todo-list {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.title-box-listas{
+  background-color: #fff;
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 20px;
+  border-radius: 10px;
+}
