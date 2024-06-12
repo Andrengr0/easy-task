@@ -1,4 +1,77 @@
 *{
     box-sizing: border-box;
+}
+
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.frase{
+    width: 100%;
+    background-color: #202020;
+    padding: 15px;
+    border-radius: 0px 20px 0 20px;
+    border: 1px solid #35c718;
     color: #fff;
+    margin-bottom: 40px;
+}
+
+.frase h1{
+    display: inline-block;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+.frase h1 img{
+    max-height: 3rem;
+    margin-left: 8px;
+}
+
+.frase p{
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+
+.form-login{
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid #2e2886;
+}
+
+.form-login h2{
+    text-align: center;
+    border-bottom: 1px solid #202020;
+    padding-bottom: 8px;
+}
+
+.form-login form{
+    margin-top: 25px;
+}
+
+.form-login label{
+    display: block;
+    margin-top: 20px;
+}
+
+.form-login form input{
+    width: 100%;
+    margin-top: 6px;
+    font-size: 1rem;
+    padding: 6px;
+}
+
+.form-login button{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+
+.form-login .strong{
+    color: #ff0000;
 }

@@ -93,7 +93,7 @@ function App() {
     return (
       <div className="app">
 
-            <h1 className='title-box-listas'>Lista de tarefas</h1>
+            <h1 className='title-box-listas'>EasyTask</h1>
 
             <div className={styles.box}>
               <TodoForm addTodo={addTodo} />
