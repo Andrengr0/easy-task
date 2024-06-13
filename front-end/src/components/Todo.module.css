@@ -1,4 +1,5 @@
 .todo{
+    border: 2px solid #35c718;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 1.2rem;
@@ -30,6 +31,11 @@ button:hover{
     background-color: #1a4b1a;
 }
 
+.complete.undo {
+    background-color: #f0abab;
+    color: #170a2c;
+  }
+
 .remove{
-    background-color: #d9534f;
+    background-color: #804644;
 }

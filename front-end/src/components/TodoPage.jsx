@@ -12,32 +12,28 @@ function TodoPage() {
   const [sort, setSort] = useState('Asc');
 
   useEffect(() => {
-    console.log('useEffect chamado');
     fetchTodos();
-  }, []); // Carregar os todos uma vez quando o componente montar
+  }, []);
 
   const fetchTodos = async () => {
-    console.log('fetchTodos chamado');
     try {
       const response = await fetch('http://localhost:3000/todos', {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`, // Enviar token JWT no header
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
       if (!response.ok) {
         throw new Error('Failed to fetch todos');
       }
       const data = await response.json();
-      console.log('Todos recebidos:', data);
-      setTodos(Array.isArray(data) ? data : []); // Verificação adicional para garantir que 'data' seja um array
+      setTodos(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error('Error fetching todos:', error);
-      setTodos([]); // Definir como array vazio em caso de erro
+      setTodos([]);
     }
   };
 
   const addTodo = async (text, category) => {
-    console.log('addTodo chamado');
     try {
       const response = await fetch('http://localhost:3000/cadastrar/todo', {
         method: 'POST',
@@ -51,7 +47,6 @@ function TodoPage() {
         throw new Error('Failed to add todo');
       }
       const newTodo = await response.json();
-      console.log('Todo adicionado:', newTodo);
       setTodos([...todos, newTodo]);
     } catch (error) {
       console.error('Error adding todo:', error);
@@ -59,7 +54,6 @@ function TodoPage() {
   };
 
   const removeTodo = async (id) => {
-    console.log('removeTodo chamado');
     try {
       const response = await fetch(`http://localhost:3000/deletar/todo/${id}`, {
         method: 'DELETE',
@@ -70,15 +64,13 @@ function TodoPage() {
       if (!response.ok) {
         throw new Error('Failed to delete todo');
       }
-      console.log('Todo removido:', id);
       setTodos(todos.filter((todo) => todo.id !== id));
     } catch (error) {
       console.error('Error deleting todo:', error);
     }
   };
 
-  const completeTodo = async (id) => {
-    console.log('completeTodo chamado');
+  const toggleCompleteTodo = async (id, isCompleted) => {
     try {
       const response = await fetch(`http://localhost:3000/alterar/todo/${id}`, {
         method: 'PUT',
@@ -86,20 +78,18 @@ function TodoPage() {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
-        body: JSON.stringify({ isCompleted: true }), // Assumindo que a API espera um objeto com isCompleted
+        body: JSON.stringify({ isCompleted: !isCompleted }),
       });
       if (!response.ok) {
         throw new Error('Failed to update todo');
       }
       const updatedTodo = await response.json();
-      console.log('Todo atualizado:', updatedTodo);
       setTodos(todos.map((todo) => (todo.id === id ? updatedTodo : todo)));
     } catch (error) {
       console.error('Error updating todo:', error);
     }
   };
 
-  console.log('Renderizando TodoPage');
   return (
     <div className="app">
       <h1 className="title-box-listas">EasyTask</h1>
@@ -135,7 +125,7 @@ function TodoPage() {
                 key={todo.id}
                 todo={todo}
                 removeTodo={removeTodo}
-                completeTodo={completeTodo}
+                completeTodo={() => toggleCompleteTodo(todo.id, todo.isCompleted)}
               />
             ))
         ) : (

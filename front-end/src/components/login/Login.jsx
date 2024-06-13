@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import logo from '../../assets/to-do-list.png';
 
+alert("Utilize 'admin' como nome de usuário e senha para realizar login.")
+
 function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -27,12 +29,17 @@ function Login({ setIsLoggedIn }) {
 
       const data = await response.json();
       localStorage.setItem('token', data.token);
-      setIsLoggedIn(true); // Define o estado de login como verdadeiro
+      setIsLoggedIn(true);
       navigate('/todos');
     } catch (error) {
       console.error('Error:', error);
       setError(true);
     }
+  };
+
+  const handleInputChange = (setter) => (event) => {
+    setter(event.target.value);
+    setError(false);
   };
 
   return (
@@ -46,10 +53,10 @@ function Login({ setIsLoggedIn }) {
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <label>Nome de usuário:</label>
-          <input id="username" name="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input id="username" name="username" type="text" value={username} onChange={handleInputChange(setUsername)} />
 
           <label>Senha:</label>
-          <input id="password" name="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input id="password" name="password" type="password" value={password} onChange={handleInputChange(setPassword)} />
 
           {error && <p className="strong">Dados incorretos ou usuário não existe. Tente novamente!</p>}
 

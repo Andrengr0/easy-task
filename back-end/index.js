@@ -11,12 +11,12 @@ fastify.decorate('prisma', prisma);
 
 // Registrar o plugin JWT
 fastify.register(require('@fastify/jwt'), {
-  secret: 'Andrengr#321'  // Substitua 'supersecret' pela sua chave secreta real
+  secret: 'Exemplo#321'
 });
 
 // Registrar o plugin CORS
 fastify.register(cors, {
-    origin: '*'  // Configuração de exemplo, ajuste conforme necessário
+    origin: '*'  // Configuração de exemplo
   });
 
 // Registrar suas rotas

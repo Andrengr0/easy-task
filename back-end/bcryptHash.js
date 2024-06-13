@@ -1,3 +1,6 @@
+
+// Execute este arquivo para gerar uma senha criptografada
+
 const bcrypt = require('bcrypt');
 
 async function hashPassword() {
