@@ -115,7 +115,7 @@ Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mai
 
 Para quaisquer dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
-- Email: [seu-email@dominio.com](mailto:seu-email@dominio.com)
-- GitHub: [seu-usuario](https://github.com/seu-usuario)
+- Email: [andrenegreirosmoreira@gmail.com](mailto:andrenegreirosmoreira@gmail.com)
+- GitHub: [Andrengr0](https://github.com/Andrengr0)
 
  
