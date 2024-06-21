@@ -107,13 +107,7 @@ EasyTask é uma aplicação de gerenciamento de tarefas simples e eficiente. Com
 - **Completar/Desfazer Tarefa:** Clique no botão "Completar" para marcar uma tarefa como completa ou "Desfazer" para marcá-la como incompleta.
 - **Deletar Tarefa:** Clique no botão "X" para deletar uma tarefa.
 
-## Licença
-
-Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
-
 ## Contato
-
-Para quaisquer dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
 - Email: [andrenegreirosmoreira@gmail.com](mailto:andrenegreirosmoreira@gmail.com)
 - GitHub: [Andrengr0](https://github.com/Andrengr0)
