@@ -4,7 +4,7 @@ async function routes(fastify, options) {
         try {
           await req.jwtVerify();
         } catch (err) {
-          res.code(401).send({ error: 'Authentication failed' });
+          res.code(401).send({ error: 'Autenticação falhou' });
         }
       });
       
@@ -15,8 +15,8 @@ async function routes(fastify, options) {
         });
         res.send(todos);
       } catch (error) {
-        console.error('Error fetching todos:', error);
-        res.status(500).send({ error: 'Failed to fetch todos' });
+        console.error('Erro ao carregar tarefas:', error);
+        res.status(500).send({ error: 'Falha ao carregar tarefas' });
       }
     });
   
@@ -33,8 +33,8 @@ async function routes(fastify, options) {
         });
         res.send(newTodo);
       } catch (error) {
-        console.error('Error creating todo:', error);
-        res.status(500).send({ error: 'Failed to create todo' });
+        console.error('Erro ao criar tarefa:', error);
+        res.status(500).send({ error: 'Falha ao criar tarefa' });
       }
     });
   
@@ -49,8 +49,8 @@ async function routes(fastify, options) {
         });
         res.send(updatedTodo);
       } catch (error) {
-        console.error('Error updating todo:', error);
-        res.status(500).send({ error: 'Failed to update todo' });
+        console.error('Erro ao alterar tarefa:', error);
+        res.status(500).send({ error: 'Falha ao alterar tarefa' });
       }
     });
   
@@ -61,10 +61,10 @@ async function routes(fastify, options) {
         await fastify.prisma.todo.delete({
           where: { id: Number(id) }
         });
-        res.send({ message: 'Todo deleted successfully' });
+        res.send({ message: 'Tarefa deletada com sucesso' });
       } catch (error) {
-        console.error('Error deleting todo:', error);
-        res.status(500).send({ error: 'Failed to delete todo' });
+        console.error('Erro ao deletar tarefa:', error);
+        res.status(500).send({ error: 'Falha ao deletar tarefa' });
       }
     });
   }
