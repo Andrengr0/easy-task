@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import logo from '../../assets/to-do-list.png';
 
-alert("Utilize 'admin' como nome de usuário e senha para realizar login.")
+// alert("Utilize 'admin' como nome de usuário e senha para realizar login.")
 
 function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState('');
@@ -24,7 +24,7 @@ function Login({ setIsLoggedIn }) {
       });
 
       if (!response.ok) {
-        throw new Error('Login failed');
+        throw new Error('Login falhou');
       }
 
       const data = await response.json();
@@ -49,20 +49,39 @@ function Login({ setIsLoggedIn }) {
         <p>Bem-vindo ao EasyTask, seu melhor companheiro na hora de organizar tarefas do cotidiano!</p>
       </div>
 
-      <div className="form-login">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <label>Nome de usuário:</label>
-          <input id="username" name="username" type="text" value={username} onChange={handleInputChange(setUsername)} />
+      <div className='content'>
+        <div className="form-login">
+          <h2>Realize o login:</h2>
+          <form onSubmit={handleSubmit}>
+            <label>Nome de usuário:</label>
+            <input id="username" name="username" type="text" value={username} onChange={handleInputChange(setUsername)} />
 
-          <label>Senha:</label>
-          <input id="password" name="password" type="password" value={password} onChange={handleInputChange(setPassword)} />
+            <label>Senha:</label>
+            <input id="password" name="password" type="password" value={password} onChange={handleInputChange(setPassword)} />
 
-          {error && <p className="strong">Dados incorretos ou usuário não existe. Tente novamente!</p>}
+            {error && <p className="strong">Dados incorretos ou usuário não existe. Tente novamente!</p>}
 
-          <button type="submit">Entrar</button>
-        </form>
+            <button type="submit">Entrar</button>
+          </form>
+        </div>
+
+        <div className="form-cadastro">
+          <h2>Ainda não é cadastrado? Faça-o agora:</h2>
+          <form onSubmit={handleSubmit}>
+            <label>Nome de usuário:</label>
+            <input id="username" name="username" type="text" value={username} onChange={handleInputChange(setUsername)} />
+
+            <label>Senha:</label>
+            <input id="password" name="password" type="password" value={password} onChange={handleInputChange(setPassword)} />
+
+            {error && <p className="strong">Dados incorretos ou usuário não existe. Tente novamente!</p>}
+
+            <button type="submit">Entrar</button>
+          </form>
+        </div> /* form-cadastro */
       </div>
+
+      
     </div>
   );
 }
