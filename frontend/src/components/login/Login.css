@@ -49,20 +49,21 @@
     }
 }
 
-.content{
-    display: flex;
-    gap: 10px;
-}
-
 
 .form-login,
-.form-cadastro{
+.form-cadastro,
+.form-success{
     width: 100%;
+    max-width: 420px;
     margin: 0 auto;
     background-color: #f5f5f5;
     padding: 30px;
     border-radius: 15px;
     border: 2px solid #2e2886;
+}
+
+.form-cadastro{
+    background-color: #dce3f7;
 }
 
 .form-login h2,
@@ -92,7 +93,7 @@
 }
 
 .form-login button,
-.form-cadastro button{
+.form-cadastro > button{
     margin-left: 50%;
     transform: translateX(-50%);
     margin-top: 25px;
@@ -102,4 +103,30 @@
 .form-login .strong,
 .form-cadastro .strong{
     color: #ff0000;
+}
+.form-login a{
+    padding: 5px 2px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.box-button{
+    display: flex;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+.box-button button{
+    font-size: 1.1rem;
+}
+
+.btn-voltar{
+    background-color: #383838;
+}
+
+.form-success button{
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
