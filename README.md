@@ -77,6 +77,20 @@ EasyTask é uma aplicação de gerenciamento de tarefas simples e eficiente. Com
     npm start
     ```
 
+### Para rodar os testes no backend:
+
+1. **Na pasta raíz easy-task entre na pasta backend:**
+
+    ```bash
+    cd backend
+    ```
+
+2. **Na pasta backend rode o comando:**
+
+    ```bash
+    npm test
+    ```
+
 ## Uso
 
 ### Endpoints da API
