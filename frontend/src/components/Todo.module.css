@@ -39,3 +39,30 @@ button:hover{
 .remove{
     background-color: #804644;
 }
+
+.modal{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    background-color: #ffffff;
+    z-index: 999;
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    border-radius: 15px;
+    background-color: #202020;
+}
+
+.modal .cancelButton{
+    background-color: #f8f549;
+    color: #000;
+    font-weight: 600;
+}
+
+.modal .confirmButton{
+    background-color: #faa6a6;
+    color: #000;
+    font-weight: 600;
+}
