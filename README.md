@@ -6,6 +6,7 @@ Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtivi
 
 ## Funcionalidades
 
+- Cadastro de usuário.
 - Autenticação de usuário com JWT.
 - Criação de tarefas com categorias.
 - Visualização de todas as tarefas de um usuário.
@@ -79,20 +80,21 @@ Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtivi
     npm start
     ```
 
-### Para rodar os testes no backend:
+## Ferramentas de Teste
 
-1. **Na pasta raíz easy-task entre na pasta backend:**
+Para garantir a qualidade e a funcionalidade do sistema, foi utilizado as seguintes ferramentas de teste:
+
+- **Jest:** Um framework de testes JavaScript desenvolvido pelo Facebook, com foco em simplicidade.
+- **Supertest:** Uma biblioteca que abstrai a complexidade de fazer solicitações HTTP durante os testes de integração. Utilizamos `fastify.inject` para realizar os testes de endpoints da nossa API.
+
+### Como Executar os Testes:
+
+1. **Para executar os testes, utilize os comandos:**
 
     ```bash
     cd backend
-    ```
-
-2. **Na pasta backend rode o comando:**
-
-    ```bash
     npm test
     ```
-
 ## Uso
 
 ### Endpoints da API
@@ -101,6 +103,9 @@ Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtivi
 
 - **POST /login:** Autentica o usuário e retorna um token JWT.
   - Body: `{ "username": "admin", "password": "admin" }`
+
+- **POST /register:** Registra um novo usuário.
+  - Body: `{ "username_cad": "novo_usuario", "password_cad": "nova_senha" }`
 
 #### Tarefas
 
@@ -117,7 +122,6 @@ Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtivi
 
 ## Notas Adicionais
 
-- **Login:** Utilize 'admin' como nome de usuário e senha para realizar login.
 - **Adicionar Tarefa:** Preencha o título e selecione uma categoria para criar uma nova tarefa.
 - **Visualizar Tarefas:** Use a barra de pesquisa e os filtros para gerenciar a visualização das tarefas.
 - **Completar/Desfazer Tarefa:** Clique no botão "Completar" para marcar uma tarefa como completa ou "Desfazer" para marcá-la como incompleta.
