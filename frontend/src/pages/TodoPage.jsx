@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import TodoForm from './TodoForm';
-import Search from './Search';
-import Filter from './Filter';
-import Todo from './Todo';
-import styles from './Common.module.css';
+import TodoForm from '../components/TodoForm';
+import Search from '../components/Search';
+import Filter from '../components/Filter';
+import Todo from '../components/Todo';
+import styles from '../components/Common.module.css';
 
 function TodoPage() {
   const [todos, setTodos] = useState([]);
