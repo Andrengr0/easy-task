@@ -47,7 +47,7 @@ describe('Autenticação', () => {
       method: 'POST',
       url: '/register',
       payload: {
-        username_cad: 'admin', // username que já existe
+        username_cad: 'admin',
         password_cad: 'novasenha'
       }
     });
