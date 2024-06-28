@@ -129,7 +129,9 @@ function TodoPage() {
               />
             ))
         ) : (
-          <p>No todos found</p>
+          <div className={styles.notTodos}>
+            <p>Não há tarefas cadastradas.</p>
+          </div>
         )}
       </div>
     </div>
