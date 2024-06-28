@@ -57,7 +57,7 @@ Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtivi
 
     O Prisma usa um arquivo de configuração `schema.prisma` que define o modelo do banco de dados. Certifique-se de que ele está configurado corretamente para o seu banco de dados. Por padrão, ele está configurado para usar SQLite.
 
-3. **Migrate o banco de dados:**
+3. **Migre o banco de dados:**
 
     ```bash
     npx prisma migrate dev --name init
