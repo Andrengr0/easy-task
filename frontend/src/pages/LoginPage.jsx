@@ -11,7 +11,17 @@ function Login({ setIsLoggedIn }) {
   const [error, setError] = useState('');
   const [formType, setFormType] = useState('login'); // 'login', 'register', or 'success'
   const [successMessage, setSuccessMessage] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisibleState, setIsConfirmPasswordVisibleState] = useState(false);
   const navigate = useNavigate();
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setIsConfirmPasswordVisibleState(!isConfirmPasswordVisibleState);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -85,7 +95,7 @@ function Login({ setIsLoggedIn }) {
     <div className="container">
       <div className="frase">
         <h1>EasyTask <img src={logo} alt="Logo" /></h1>
-        <p>Bem-vindo ao EasyTask, seu melhor companheiro na hora de organizar tarefas do cotidiano!</p>
+        <p className="slogan">Seu melhor companheiro na organização de tarefas do cotidiano!</p>
       </div>
       {formType === 'login' ? (
         <div className="form-login">
@@ -95,7 +105,19 @@ function Login({ setIsLoggedIn }) {
             <input id="username" name="username" type="text" value={username} onChange={handleInputChange(setUsername)} />
 
             <label>Senha:</label>
-            <input id="password" name="password" type="password" value={password} onChange={handleInputChange(setPassword)} />
+            <div className="password-container">
+              <input
+                id="password"
+                name="password"
+                type={isPasswordVisible ? 'text' : 'password'}
+                value={password}
+                onChange={handleInputChange(setPassword)}
+              />
+              <i
+                className={`fa ${isPasswordVisible ? 'fa-eye' : 'fa-eye-slash'}`}
+                onClick={togglePasswordVisibility}
+              />
+            </div>
 
             {error && <p className="strong">{error}</p>}
 
@@ -114,29 +136,55 @@ function Login({ setIsLoggedIn }) {
               <p className="strong">O nome de usuário deve ter pelo menos 5 caracteres.</p>
             )}
 
-            {username.length == 30 && (
+            {username.length === 30 && (
               <p className="strong">Máximo 30 caracteres.</p>
             )}
 
             <label>Senha:</label>
-            <input id="password_cad" name="password_cad" type="password" value={password} maxLength={20} onChange={handleInputChange(setPassword)} />
+            <div className="password-container">
+              <input
+                id="password_cad"
+                name="password_cad"
+                type={isPasswordVisible ? 'text' : 'password'}
+                value={password}
+                maxLength={20}
+                onChange={handleInputChange(setPassword)}
+              />
+              <i
+                className={`fa ${isPasswordVisible ? 'fa-eye' : 'fa-eye-slash'}`}
+                onClick={togglePasswordVisibility}
+              />
+            </div>
 
             {password.length > 0 && password.length < 5 && (
               <p className="strong">A senha deve ter pelo menos 5 caracteres.</p>
             )}
 
-            {password.length == 20 && (
+            {password.length === 20 && (
               <p className="strong">Máximo 20 caracteres.</p>
             )}
 
             {isConfirmPasswordVisible && (
               <>
                 <label>Confirme a senha:</label>
-                <input id="confirm_password" name="confirm_password" type="password" value={confirmPassword} maxLength={20} onChange={handleInputChange(setConfirmPassword)} />
+                <div className="password-container">
+                  <input
+                    id="confirm_password"
+                    name="confirm_password"
+                    type={isConfirmPasswordVisibleState ? 'text' : 'password'}
+                    value={confirmPassword}
+                    maxLength={20}
+                    onChange={handleInputChange(setConfirmPassword)}
+                  />
+                  <i
+                    className={`fa ${isConfirmPasswordVisibleState ? 'fa-eye' : 'fa-eye-slash'}`}
+                    onClick={toggleConfirmPasswordVisibility}
+                  />
+                </div>
               </>
             )}
 
-            {confirmPassword.length == 20 && (
+            {confirmPassword.length === 20 && (
               <p className="strong">Máximo 20 caracteres.</p>
             )}
 

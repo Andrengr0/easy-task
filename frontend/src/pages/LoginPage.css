@@ -39,6 +39,23 @@
     width: 60%;
 }
 
+.frase .slogan {
+    font-size: 1.2rem;
+    margin-top: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 @media screen and (max-width: 768px){
     .frase{
         display: block;
@@ -49,6 +66,20 @@
     }
 }
 
+.form-login{
+    animation: rotateIn 1s ease-in-out;
+}
+
+@keyframes rotateIn {
+    from {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotateY(0);
+      opacity: 1;
+    }
+  }
 
 .form-login,
 .form-cadastro,
@@ -97,6 +128,7 @@
     margin-left: 50%;
     transform: translateX(-50%);
     margin-top: 25px;
+    margin-bottom: 10px;
     font-size: 1.1rem;
 }
 
@@ -107,6 +139,8 @@
 .form-login a{
     padding: 5px 2px;
     text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -130,3 +164,21 @@
     margin-left: 50%;
     transform: translateX(-50%);
 }
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-container input {
+    padding-right: 30px;
+  }
+  
+  .password-container .fa {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
