@@ -80,7 +80,7 @@ Para configurar a conexão com o banco de dados PostgreSQL, siga os passos abaix
 
 2. **Crie um Banco de Dados: Crie um banco de dados vazio no PostgreSQL que será usado pela EasyTask.**
 
-3. **Configure o Arquivo .env na pasta do backend com as seguintes variáveis de ambiente:**
+3. **Configure o Arquivo .env: Crie um arquivo .env na pasta do backend com as seguintes variáveis de ambiente:**
 
     ```bash
     DATABASE_URL=postgresql://usuario:senha@localhost:5432/nome_do_banco
