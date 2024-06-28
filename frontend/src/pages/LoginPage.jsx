@@ -9,7 +9,7 @@ function Login({ setIsLoggedIn }) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
   const [error, setError] = useState('');
-  const [formType, setFormType] = useState('login'); // 'login', 'register', or 'success'
+  const [formType, setFormType] = useState('login');
   const [successMessage, setSuccessMessage] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisibleState, setIsConfirmPasswordVisibleState] = useState(false);
@@ -102,7 +102,7 @@ function Login({ setIsLoggedIn }) {
           <h2>Realize o login:</h2>
           <form onSubmit={handleSubmit}>
             <label>Nome de usuário:</label>
-            <input id="username" name="username" type="text" value={username} onChange={handleInputChange(setUsername)} />
+            <input id="username" name="username" type="text" value={username} maxLength={30} onChange={handleInputChange(setUsername)} />
 
             <label>Senha:</label>
             <div className="password-container">
@@ -111,6 +111,7 @@ function Login({ setIsLoggedIn }) {
                 name="password"
                 type={isPasswordVisible ? 'text' : 'password'}
                 value={password}
+                maxLength={20}
                 onChange={handleInputChange(setPassword)}
               />
               <i
