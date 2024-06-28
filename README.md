@@ -4,6 +4,10 @@ EasyTask é uma aplicação de gerenciamento de tarefas simples e eficiente. Com
 
 Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtividade na construção de funcionalidades, e também aprendizado acerca de determinadas ferramentas aqui presentes.
 
+<img alt="EasyTask-Login" width="100%" src="img-easyTask-login.png">
+
+<img alt="EasyTask-Presentation" width="100%" src="gif-EasyTask-Todo.gif">
+
 ## Funcionalidades
 
 - Cadastro de usuário.
