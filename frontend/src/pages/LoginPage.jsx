@@ -133,14 +133,6 @@ function Login({ setIsLoggedIn }) {
             <label>Nome de usuário:</label>
             <input id="username_cad" name="username_cad" type="text" value={username} maxLength={30} onChange={handleInputChange(setUsername)} />
 
-            {username.length > 0 && username.length < 5 && (
-              <p className="strong">O nome de usuário deve ter pelo menos 5 caracteres.</p>
-            )}
-
-            {username.length === 30 && (
-              <p className="strong">Máximo 30 caracteres.</p>
-            )}
-
             <label>Senha:</label>
             <div className="password-container">
               <input
@@ -156,14 +148,6 @@ function Login({ setIsLoggedIn }) {
                 onClick={togglePasswordVisibility}
               />
             </div>
-
-            {password.length > 0 && password.length < 5 && (
-              <p className="strong">A senha deve ter pelo menos 5 caracteres.</p>
-            )}
-
-            {password.length === 20 && (
-              <p className="strong">Máximo 20 caracteres.</p>
-            )}
 
             {isConfirmPasswordVisible && (
               <>
@@ -183,14 +167,6 @@ function Login({ setIsLoggedIn }) {
                   />
                 </div>
               </>
-            )}
-
-            {confirmPassword.length === 20 && (
-              <p className="strong">Máximo 20 caracteres.</p>
-            )}
-
-            {password !== confirmPassword && confirmPassword.length > 0 && (
-              <p className="strong">As senhas digitadas não coincidem.</p>
             )}
 
             {error && <p className="strong">{error}</p>}
