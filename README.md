@@ -2,6 +2,8 @@
 
 EasyTask é uma aplicação de gerenciamento de tarefas simples e eficiente. Com EasyTask, você pode criar, visualizar, completar e deletar suas tarefas diárias. A aplicação inclui autenticação de usuário e está dividida em front-end e back-end. O front-end é desenvolvido usando React com Vite, e o back-end é construído com Fastify, Prisma e banco de dados PostgreSQL.
 
+Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtividade na construção de funcionalidades, e também aprendizado acerca de determinadas ferramentas aqui presentes.
+
 ## Funcionalidades
 
 - Autenticação de usuário com JWT.
