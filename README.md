@@ -72,6 +72,26 @@ Nesse projeto foi utilizada IA (Inteligência Artificial) para fins de produtivi
     npm install
     ```
 
+### Configuração do Banco de Dados
+
+Para configurar a conexão com o banco de dados PostgreSQL, siga os passos abaixo:
+
+1. **Instale o PostgreSQL: Certifique-se de ter o PostgreSQL instalado localmente ou em um servidor acessível.**
+
+2. **Crie um Banco de Dados: Crie um banco de dados vazio no PostgreSQL que será usado pela EasyTask.**
+
+3. **Configure o Arquivo .env na pasta do backend com as seguintes variáveis de ambiente:**
+
+    ```bash
+    DATABASE_URL=postgresql://usuario:senha@localhost:5432/nome_do_banco
+    ```
+
+    - Substitua usuario pelo seu nome de usuário do PostgreSQL.
+    - Substitua senha pela sua senha do PostgreSQL.
+    - Substitua localhost:5432 pelo host e porta do seu banco de dados PostgreSQL, se diferente.
+    - Substitua nome_do_banco pelo nome do banco de dados que você criou.
+
+
 ### Para rodar a aplicação:
 
 1. **Na pasta raíz easy-task rode o comando:**
