@@ -61,8 +61,8 @@ describe('Autenticação', () => {
       method: 'POST',
       url: '/register',
       payload: {
-        username_cad: 'abc', // username com menos de 5 caracteres
-        password_cad: '123' // senha com menos de 5 caracteres
+        username_cad: 'abc',
+        password_cad: '123' 
       }
     });
 
